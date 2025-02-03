@@ -1,9 +1,11 @@
 <template>
   <main>
-    <h1>This is a Store page</h1>
+    <ProductList />
   </main>
 </template>
 
 <script setup lang="ts">
+import ProductList from '@/components/ProductList.vue'
+
 </script>
 
