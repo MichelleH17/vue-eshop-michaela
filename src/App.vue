@@ -1,17 +1,9 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import MainNavbar from './components/MainNavbar.vue'
 </script>
 
 <template>
-  <header>
-    <nav>
-      <RouterLink to="/">Store</RouterLink>
-      <RouterLink to="/cart">Cart</RouterLink>
-    </nav>
-  </header>
-
+  <MainNavbar />
   <RouterView />
 </template>
-
-<style scoped>
-</style>
