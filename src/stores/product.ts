@@ -38,6 +38,14 @@ export const useProductStore = defineStore('product', () => {
       }
     }
 
+  const isAdded = (productId: number) => {
+    return cartItems.value.some(item => item.product.id === productId)
+  }
 
-  return { products, fetchProducts, cartItems, addItem, increaseQuantity, decreaseQuantity }
+  const getQuantity = (productId: number) => {
+    const item = cartItems.value.find(item => item.product.id === productId)
+    return item ? item.quantity : 0
+  }
+
+  return { products, fetchProducts, cartItems, addItem, increaseQuantity, decreaseQuantity, isAdded, getQuantity }
 })
