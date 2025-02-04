@@ -13,7 +13,7 @@
         <button @click="increaseQuantity" class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg font-semibold">
           +</button>
       </div>
-      <button v-else @click="addItem" class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg shadow">BUY</button>
+      <button v-else @click="addItem" class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg shadow font-semibold">BUY</button>
     </div>
   </div>
 </template>
