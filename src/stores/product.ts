@@ -60,5 +60,9 @@ export const useProductStore = defineStore('product', () => {
     return cartItems.value.reduce((total, item) => total + item.product.price * item.quantity, 0)
   })
 
-  return { products, fetchProducts, cartItems, addItem, removeItem, increaseQuantity, decreaseQuantity, isAdded, getQuantity, getTotalPriceForProduct, totalPrice }
+  const totalItems = computed(() => {
+    return cartItems.value.reduce((total, item) => total + item.quantity, 0)
+  })
+
+  return { products, fetchProducts, cartItems, addItem, removeItem, increaseQuantity, decreaseQuantity, isAdded, getQuantity, getTotalPriceForProduct, totalPrice, totalItems }
 })
