@@ -9,19 +9,41 @@
       <div v-if="isAdded" class="flex items-center">
         <button @click="decreaseQuantity" class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded-lg">
         -</button>
+        <input type="number" v-model="quantity" class="w-12 text-center mx-2" />
         <button @click="increaseQuantity" class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded-lg">
           +</button>
-        <button @click="addItem" class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg shadow">BUY</button>
-
       </div>
+      <button v-else @click="addItem" class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg shadow">BUY</button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { Product } from '../types'
+import { useProductStore } from '@/stores/product'
 
-defineProps<{
+const props = defineProps<{
   product: Product
 }>()
+
+const product = props.product
+
+const productStore = useProductStore()
+
+const isAdded = computed(() => productStore.isAdded(props.product.id))
+const quantity = computed(() => productStore.getQuantity(props.product.id))
+
+const addItem = () => {
+  productStore.addItem(props.product)
+}
+
+const increaseQuantity = () => {
+  productStore.increaseQuantity(props.product)
+}
+
+const decreaseQuantity = () => {
+  productStore.decreaseQuantity(props.product)
+}
+
 </script>
