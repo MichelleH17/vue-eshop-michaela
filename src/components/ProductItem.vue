@@ -9,7 +9,7 @@
       <div v-if="isAdded" class="flex items-center">
         <button @click="decreaseQuantity" class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg font-semibold">
         -</button>
-        <input type="number" v-model="quantity" class="w-12 text-center mx-2 font-semibold" />
+        <input type="number" v-model="quantity" class="w-12 text-center ml-4 mr-2 py-1 font-semibold" />
         <button @click="increaseQuantity" class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg font-semibold">
           +</button>
       </div>
