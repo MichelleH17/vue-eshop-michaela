@@ -6,7 +6,14 @@
     </div>
     <div class="flex justify-between items-center">
       <span class="text-gray-900 text-lg font-bold">{{ product.price }}€</span>
-      <button class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg shadow">BUY</button>
+      <div v-if="isAdded" class="flex items-center">
+        <button @click="decreaseQuantity" class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded-lg">
+        -</button>
+        <button @click="increaseQuantity" class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded-lg">
+          +</button>
+        <button @click="addItem" class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg shadow">BUY</button>
+
+      </div>
     </div>
   </div>
 </template>
