@@ -32,6 +32,7 @@ const product = props.product
 const productStore = useProductStore()
 
 const isAdded = computed(() => productStore.isAdded(props.product.id))
+
 const quantity = computed(() => productStore.getQuantity(props.product.id))
 
 const addItem = () => {
@@ -43,7 +44,11 @@ const increaseQuantity = () => {
 }
 
 const decreaseQuantity = () => {
-  productStore.decreaseQuantity(props.product)
+  if (quantity.value > 1) {
+    productStore.decreaseQuantity(props.product)
+  } else {
+    productStore.removeItem(props.product)
+  }
 }
 
 </script>
