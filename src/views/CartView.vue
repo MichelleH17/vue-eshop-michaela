@@ -1,7 +1,7 @@
 <template>
   <main>
-    <div v-if="cartItems.length > 0" class="p-4 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
-      <ul class="sm:col-span-2">
+    <div v-if="cartItems.length > 0" class="p-4 grid grid-cols-1 sm:grid-cols-4 gap-4 max-w-5xl mx-auto">
+      <ul class="sm:col-span-3">
         <CartItem v-for="item in cartItems" :key="item.product.id" :item="item" />
       </ul>
       <div class="mt-4 sm:col-span-1 border border-gray-200 rounded-lg p-12 shadow-md w-auto justify-self-end">
