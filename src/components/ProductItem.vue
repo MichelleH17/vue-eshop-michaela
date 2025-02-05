@@ -7,13 +7,31 @@
     <div class="flex justify-between items-center">
       <span class="text-gray-900 text-lg font-bold">{{ product.price }}€</span>
       <div v-if="isAdded" class="flex items-center">
-        <button @click="decreaseQuantity" class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg font-semibold">
-        -</button>
-        <input type="number" v-model="quantity" class="w-12 text-center ml-4 mr-2 py-1 font-semibold" />
-        <button @click="increaseQuantity" class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg font-semibold">
-          +</button>
+        <button
+          @click="decreaseQuantity"
+          class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg font-semibold"
+        >
+          -
+        </button>
+        <input
+          type="number"
+          v-model="quantity"
+          class="w-12 text-center ml-4 mr-2 py-1 font-semibold"
+        />
+        <button
+          @click="increaseQuantity"
+          class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg font-semibold"
+        >
+          +
+        </button>
       </div>
-      <button v-else @click="addItem" class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg shadow font-semibold">BUY</button>
+      <button
+        v-else
+        @click="addItem"
+        class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg shadow font-semibold"
+      >
+        BUY
+      </button>
     </div>
   </div>
 </template>
@@ -50,5 +68,4 @@ const decreaseQuantity = () => {
     productStore.removeItem(props.product)
   }
 }
-
 </script>
