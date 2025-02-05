@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-green-700 text-white text-2xl py-2">
+  <header class="fixed top-0 left-0 w-full bg-green-700 text-white text-2xl py-2">
     <nav class="flex items-center justify-between px-4">
       <RouterLink to="/store" class="hover:bg-green-800 px-2 py-0.5 rounded">E-SHOP</RouterLink>
       <div class="flex space-x-4">
