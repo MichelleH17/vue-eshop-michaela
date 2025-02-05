@@ -1,12 +1,12 @@
 <template>
   <main>
-    <div v-if="cartItems.length > 0" class="p-4 grid grid-cols-1 sm:grid-cols-4 gap-4 max-w-5xl mx-auto">
-      <ul class="sm:col-span-3">
+    <div v-if="cartItems.length > 0" class="p-4 grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+      <ul class="md:col-span-3">
         <CartItem v-for="item in cartItems" :key="item.product.id" :item="item" />
       </ul>
-      <div class="mt-4 sm:col-span-1 border border-gray-200 rounded-lg p-6 sm:p-12 shadow-md w-auto justify-self-end justify-center flex flex-row items-center space-x-2">
+      <div class="mt-4 sm:col-span-1 border border-gray-200 rounded-lg p-6 md:p-12 shadow-md w-auto justify-self-end justify-center flex flex-row md:flex-col items-center space-x-2">
         <p class="text-2xl sm:text-lg font-bold text-center">Total:</p>
-        <h2 class="text-2xl sm:text-3xl font-bold text-center sm:mt-4">{{ totalPrice }}€</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-center md:mt-4">{{ totalPrice }}€</h2>
       </div>
     </div>
     <div v-else>
