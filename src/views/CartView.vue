@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div v-if="cartItems.length > 0" class="p-4 grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+    <div v-if="cartItems.length > 0" class="p-4 grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl mx-auto mt-16 sm:mt-24">
       <ul class="md:col-span-3">
         <CartItem v-for="item in cartItems" :key="item.product.id" :item="item" />
       </ul>
@@ -10,7 +10,7 @@
       </div>
     </div>
     <div v-else>
-      <p class="text-center text-xl px-4 mt-12">Your cart is empty</p>
+      <p class="text-center text-xl px-4 mt-20">Your cart is empty</p>
     </div>
   </main>
 </template>
