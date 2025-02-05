@@ -4,8 +4,8 @@
     <div class="bg-gray-50 rounded flex items-center justify-center h-48 mb-3">
       <img :src="product.picture" alt="Product Image" class="h-full object-cover" />
     </div>
-    <div class="flex justify-between items-center">
-      <span class="text-gray-900 text-lg font-bold">{{ product.price }}€</span>
+    <div class="flex justify-between items-end">
+      <span class="text-gray-900 text-xl font-bold">{{ product.price }}€</span>
       <div v-if="isAdded" class="flex items-center">
         <button
           @click="decreaseQuantity"
@@ -16,7 +16,7 @@
         <input
           type="number"
           v-model="quantity"
-          class="w-12 text-center ml-4 mr-2 py-1 font-semibold"
+          class="w-12 text-center ml-2 mr-1 py-1 font-semibold"
         />
         <button
           @click="increaseQuantity"
@@ -28,7 +28,7 @@
       <button
         v-else
         @click="addItem"
-        class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg shadow font-semibold"
+        class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg shadow font-semibold"
       >
         BUY
       </button>
