@@ -1,5 +1,10 @@
 <template>
-  <div class="mx-auto max-w-3xl">
+  <div class="mx-auto max-w-3xl my-4 md:my-8">
+    <RouterLink to="/orders">
+      <button class="mx-4 hover:text-green-700 cursor-pointer">
+        &larr; Back to Orders
+      </button>
+    </RouterLink>
     <div v-if="order" class="m-4 md:my-8 p-4 border border-gray-200 rounded-lg shadow-md">
       <h1 class="text-2xl md:text-4xl font-semibold my-2 md:my-4 text-green-700">Order details</h1>
       <div class="flex flex-row justify-between items-center">
@@ -48,7 +53,7 @@
 
 <script setup lang="ts">
 import { useProductStore } from '@/stores/product'
-import { useRoute } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
 
 const route = useRoute()
 const orderId = Number(route.params.id)
