@@ -7,8 +7,8 @@
     >
       <RouterLink :to="`/orders/${order.id}`">
         <div class="p-4">
-        <h2 class="text-lg font-semibold mb-2">Order ID: {{ order.id }}</h2>
-        <p>Order created: {{ new Date(order.date).toLocaleDateString() }}</p>
+          <h2 class="text-lg font-semibold mb-2">Order ID: {{ order.id }}</h2>
+          <p>Order created: {{ new Date(order.date).toLocaleDateString() }}</p>
         </div>
         <OrderItem
           v-for="(item, itemIndex) in order.items"

@@ -12,7 +12,6 @@
 </template>
 
 <script setup lang="ts">
-
 const props = defineProps<{
   picture: string
   item: { product: { name: string; price: number }; quantity: number }
