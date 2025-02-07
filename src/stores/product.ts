@@ -5,7 +5,7 @@ import type { Product } from '../types'
 export const useProductStore = defineStore('product', () => {
   const products = ref<Product[]>([])
   const cartItems = ref<{ product: Product; quantity: number }[]>([])
-  const orders = ref<{ productId: number; quantity: number }[][]>([])
+  const orders = ref<{ id: number; date: string; items: { productId: number; quantity: number }[] }[]>([])
   // [[{productId, quantity}], [{productId, quantity}], ...]
 
   const fetchProducts = async () => {
@@ -67,10 +67,14 @@ export const useProductStore = defineStore('product', () => {
   })
 
   const createOrder = () => {
-    const order = cartItems.value.map(item => ({
-      productId: item.product.id,
-      quantity: item.quantity,
+    const order =  {
+      id: orders.value.length + 1,
+      date: new Date().toISOString(),
+      items: cartItems.value.map(item => ({
+        productId: item.product.id,
+        quantity: item.quantity,
     }))
+    }
     orders.value.push(order)
   }
 
