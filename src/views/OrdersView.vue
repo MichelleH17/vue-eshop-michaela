@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-w-5xl mx-auto">
     <OrderList :orders="orders" />
   </div>
 </template>
