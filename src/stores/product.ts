@@ -120,4 +120,6 @@ export const useProductStore = defineStore('product', () => {
     getProductDetails,
     calculateTotalPrice,
   }
+}, {
+  persist: true
 })
