@@ -53,6 +53,7 @@
 
 <script setup lang="ts">
 import { useProductStore } from '@/stores/product'
+import { onMounted } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -76,4 +77,8 @@ const totalProductPrice = (productId: number, quantity: number) => {
   const product = productStore.getProductDetails(productId)
   return product ? product.price * quantity : 0
 }
+
+onMounted(() => {
+  window.scrollTo(0, 0)
+})
 </script>
