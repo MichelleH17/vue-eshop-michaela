@@ -9,7 +9,7 @@
       <div v-if="isAdded" class="flex items-center">
         <button
           @click="decreaseQuantity"
-          class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg font-semibold"
+          class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg font-semibold cursor-pointer"
         >
           -
         </button>
@@ -20,7 +20,7 @@
         />
         <button
           @click="increaseQuantity"
-          class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg font-semibold"
+          class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg font-semibold cursor-pointer"
         >
           +
         </button>
@@ -28,7 +28,7 @@
       <button
         v-else
         @click="addItem"
-        class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg shadow font-semibold"
+        class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg shadow font-semibold cursor-pointer"
       >
         BUY
       </button>
