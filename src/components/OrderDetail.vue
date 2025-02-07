@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto max-w-3xl">
-    <div v-if="order" class="m-4 p-4 border border-gray-200 rounded-lg shadow-md">
+    <div v-if="order" class="m-4 md:my-8 p-4 border border-gray-200 rounded-lg shadow-md">
       <h1 class="text-2xl md:text-4xl font-semibold my-2 md:my-4 text-green-700">Order details</h1>
       <div class="flex flex-row justify-between items-center">
         <div>

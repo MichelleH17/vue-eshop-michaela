@@ -3,7 +3,7 @@
     <li
       v-for="order in sortedOrders"
       :key="order.id"
-      class="grid grid-cols-1 gap-4 items-center mt-4 border border-gray-200 rounded-lg shadow-md hover:border-green-700"
+      class="grid grid-cols-1 gap-4 items-center my-4 md:my-8 border border-gray-200 rounded-lg shadow-md hover:border-green-700"
     >
       <RouterLink :to="`/orders/${order.id}`">
         <div class="p-4">
