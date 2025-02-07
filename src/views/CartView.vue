@@ -8,6 +8,9 @@
         <p class="text-2xl sm:text-lg font-bold text-center">Total:</p>
         <h2 class="text-2xl md:text-3xl font-bold text-center md:mt-4">{{ totalPrice }}€</h2>
       </div>
+      <RouterLink to="/orders" @click="createOrder"
+        class="bg-green-700 hover:bg-green-800 text-xl text-white px-12 py-3 mt-20 rounded-lg shadow font-semibold w-auto justify-self-center">Order
+      </RouterLink>
     </div>
     <div v-else>
       <p class="text-center text-xl px-4 mt-20">Your cart is empty</p>
@@ -19,10 +22,13 @@
 import { computed } from 'vue'
 import CartItem from '@/components/CartItem.vue'
 import { useProductStore } from '@/stores/product'
+import { RouterLink} from 'vue-router'
 
 const productStore = useProductStore()
 
 const cartItems = computed(() => productStore.cartItems)
 const totalPrice = computed(() => productStore.totalPrice)
 
+const createOrder = computed(() =>
+  productStore.createOrder)
 </script>
