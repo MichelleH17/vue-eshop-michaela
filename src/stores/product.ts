@@ -64,6 +64,18 @@ export const useProductStore = defineStore('product', () => {
     return cartItems.value.reduce((total, item) => total + item.quantity, 0)
   })
 
+  const createOrder = computed(() => {
+    return {
+      items: cartItems.value.map((item) => ({
+        productId: item.product.id,
+        name: item.product.name,
+        picture: item.product.picture,
+        quantity: item.quantity,
+      })),
+      totalPrice: totalPrice.value,
+    }
+  })
+
   return {
     products,
     fetchProducts,
@@ -77,5 +89,6 @@ export const useProductStore = defineStore('product', () => {
     getTotalPriceForProduct,
     totalPrice,
     totalItems,
+    createOrder,
   }
 })
