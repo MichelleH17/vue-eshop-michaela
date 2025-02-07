@@ -1,25 +1,25 @@
 <template>
-  <div v-if="order" class="max-w-4xl mx-auto p-4 grid grid-cols-1 gap-4 items-center mt-4 border border-gray-200 rounded-lg shadow-md">
-    <h1 class="text-4xl font-semibold mb-2 text-green-700">Order details</h1>
+  <div v-if="order" class="max-w-4xl mx-auto p-4 grid grid-cols-1 gap-4 items-center m-4 border border-gray-200 rounded-lg shadow-md">
+    <h1 class="text-2xl md:text-4xl font-semibold mb-2 text-green-700">Order details</h1>
     <div class="flex flex-row justify-between items-center">
       <div>
-        <h2 class="text-xl font-semibold">Order ID: {{ order.id }}</h2>
-        <p class="text-xl mb-2">Order created: {{ new Date(order.date).toLocaleDateString() }}</p>
+        <h2 class="text-lg md:text-xl font-semibold">Order ID: {{ order.id }}</h2>
+        <p class="text-lg md:text-xl mb-2">Order created: {{ new Date(order.date).toLocaleDateString() }}</p>
       </div>
       <div class="flex flex-col">
-        <p class="text-xl font-semibold mb-2">Total Price:</p>
-        <p class="text-3xl font-semibold text-center">{{ calculateTotalPrice(order.items) }}€</p>
+        <p class="text-base md:text-xl font-semibold mb-2">Total Price:</p>
+        <p class="text-2xl md:text-3xl font-semibold text-center">{{ calculateTotalPrice(order.items) }}€</p>
       </div>
     </div>
     <ul>
       <li v-for="(item, index) in order.items" :key="index" class="mb-4">
         <div class="flex flex-row gap-4 md:gap-6">
-          <img :src="getProductDetails(item.productId)?.picture" alt="Product Image" class="w-48 h-48 mb-2 rounded-lg shadow-md col-span-2" />
-          <div class="flex flex-col gap-1 md:gap-2.5">
-            <p class="text-2xl font-semibold text-green-800">{{ getProductDetails(item.productId)?.name }}</p>
-            <p class="text-lg font-semibold">Price: {{ getProductDetails(item.productId)?.price }}€</p>
-            <p class="text-lg font-semibold">Quantity: {{ item.quantity }}</p>
-            <p class="text-lg font-semibold">Total Price: {{ totalProductPrice(item.productId, item.quantity) }}€</p>
+          <img :src="getProductDetails(item.productId)?.picture" alt="Product Image" class="w-28 sm:w-40 md:w-48 h-28 sm:h-40 md:h-48 mb-2 rounded-lg shadow-md col-span-2" />
+          <div class="flex flex-col gap-0.5 md:gap-2.5">
+            <p class="text-xl md:text-2xl font-semibold text-green-800">{{ getProductDetails(item.productId)?.name }}</p>
+            <p class="text-base md:text-lg font-semibold">Price: {{ getProductDetails(item.productId)?.price }}€</p>
+            <p class="text-base md:text-lg font-semibold">Quantity: {{ item.quantity }}</p>
+            <p class="text-base md:text-lg font-semibold">Total Price: {{ totalProductPrice(item.productId, item.quantity) }}€</p>
           </div>
         </div>
       </li>
