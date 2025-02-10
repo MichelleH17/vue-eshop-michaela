@@ -6,10 +6,10 @@
 
 <script setup lang="ts">
 import OrderList from '@/components/OrderList.vue'
-import { useProductStore } from '@/stores/product'
+import { useOrderStore } from '@/stores/order'
 import { computed } from 'vue'
 
-const productStore = useProductStore()
+const orderStore = useOrderStore()
 
-const orders = computed(() => productStore.orders)
+const orders = computed(() => orderStore.orders)
 </script>

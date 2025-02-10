@@ -52,29 +52,29 @@
 </template>
 
 <script setup lang="ts">
-import { useProductStore } from '@/stores/product'
+import { useOrderStore } from '@/stores/order'
 import { onMounted } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 
 const route = useRoute()
 const orderId = Number(route.params.id)
 
-const productStore = useProductStore()
-const order = productStore.orders.find((order) => order.id === orderId)
+const orderStore = useOrderStore()
+const order = orderStore.orders.find((order) => order.id === orderId)
 
 const getProductDetails = (productId: number) => {
-  return productStore.getProductDetails(productId)
+  return orderStore.getProductDetails(productId)
 }
 
 const calculateTotalPrice = (items: { productId: number; quantity: number }[]) => {
   return items.reduce((total, item) => {
-    const product = productStore.getProductDetails(item.productId)
+    const product = orderStore.getProductDetails(item.productId)
     return total + (product ? product.price * item.quantity : 0)
   }, 0)
 }
 
 const totalProductPrice = (productId: number, quantity: number) => {
-  const product = productStore.getProductDetails(productId)
+  const product = orderStore.getProductDetails(productId)
   return product ? product.price * quantity : 0
 }
 

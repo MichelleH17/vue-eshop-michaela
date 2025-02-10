@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import OrderItem from '@/components/OrderItem.vue'
-import { useProductStore } from '@/stores/product'
+import { useOrderStore } from '@/stores/order'
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 
@@ -37,10 +37,10 @@ const props = defineProps<{
   orders: Array<{ id: number; date: string; items: { productId: number; quantity: number }[] }>
 }>()
 
-const productStore = useProductStore()
+const orderStore = useOrderStore()
 
 const getProductDetails = (productId: number) => {
-  return productStore.getProductDetails(productId)
+  return orderStore.getProductDetails(productId)
 }
 
 const sortedOrders = computed(() => {
