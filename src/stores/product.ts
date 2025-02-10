@@ -5,8 +5,6 @@ import type { Product } from '../types'
 export const useProductStore = defineStore('product', () => {
   const products = ref<Product[]>([])
   const cartItems = ref<{ product: Product; quantity: number }[]>([])
-  const orders = ref<{ id: number; date: string; items: { productId: number; quantity: number }[] }[]>([])
-  // [[{productId, quantity}], [{productId, quantity}], ...]
 
   const fetchProducts = async () => {
     try {
@@ -66,45 +64,13 @@ export const useProductStore = defineStore('product', () => {
     return cartItems.value.reduce((total, item) => total + item.quantity, 0)
   })
 
-  const createOrder = () => {
-    const order =  {
-      id: orders.value.length + 1,
-      date: new Date().toISOString(),
-      items: cartItems.value.map(item => ({
-        productId: item.product.id,
-        quantity: item.quantity,
-    }))
-    }
-    orders.value.push(order)
-  }
-
   const clearCart = () => {
     cartItems.value = []
-  }
-
-  const getProductDetails = (productId: number) => {
-    const product = products.value.find(product => product.id === productId)
-    if (product) {
-      return {
-        picture: product.picture,
-        name: product.name,
-        price: product.price
-      }
-    }
-    return null
-  }
-
-  const calculateTotalPrice = (items: { productId: number; quantity: number }[]) => {
-    return items.reduce((total, item) => {
-      const product = products.value.find(product => product.id === item.productId)
-      return total + (product ? product.price * item.quantity : 0)
-    }, 0)
   }
 
   return {
     products,
     fetchProducts,
-    orders,
     cartItems,
     addItem,
     removeItem,
@@ -115,11 +81,9 @@ export const useProductStore = defineStore('product', () => {
     getTotalPriceForProduct,
     totalPrice,
     totalItems,
-    createOrder,
     clearCart,
-    getProductDetails,
-    calculateTotalPrice,
   }
-}, {
-  persist: true
+  // }, {
+  //   persist: true
+  // }
 })
