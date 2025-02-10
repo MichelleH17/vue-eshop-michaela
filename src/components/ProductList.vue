@@ -7,15 +7,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
+import { computed } from 'vue'
 import ProductItem from './ProductItem.vue'
 import { useProductStore } from '@/stores/product'
 
 const productStore = useProductStore()
-
-onMounted(() => {
-  productStore.fetchProducts()
-})
 
 const products = computed(() => productStore.products)
 </script>
