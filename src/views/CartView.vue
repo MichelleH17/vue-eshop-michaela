@@ -30,17 +30,17 @@
 import { computed } from 'vue'
 import CartItem from '@/components/CartItem.vue'
 import { useProductStore } from '@/stores/product'
+import { useOrderStore } from '@/stores/order'
 import { RouterLink } from 'vue-router'
 
 const productStore = useProductStore()
+const orderStore = useOrderStore()
 
 const cartItems = computed(() => productStore.cartItems)
 const totalPrice = computed(() => productStore.totalPrice)
 
 const createOrder = () => {
-  productStore.createOrder()
+  orderStore.createOrder()
   productStore.clearCart()
 }
-
-console.log(productStore.createOrder)
 </script>
