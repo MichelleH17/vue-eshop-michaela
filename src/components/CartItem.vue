@@ -1,6 +1,6 @@
 <template>
   <li
-    class="grid grid-cols-5 gap-4 items-center m-4 border border-gray-200 rounded-lg p-4 shadow-md"
+    class="cart-item grid grid-cols-5 gap-4 items-center m-4 border border-gray-200 rounded-lg p-4 shadow-md"
   >
     <button
       @click="removeItem"
