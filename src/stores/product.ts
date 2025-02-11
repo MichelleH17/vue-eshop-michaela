@@ -10,7 +10,7 @@ export const useProductStore = defineStore(
 
     const fetchProducts = async () => {
       try {
-        const response = await fetch('src/shop-items.json')
+        const response = await fetch('shop-items.json')
         products.value = await response.json()
       } catch (error) {
         console.error('Failed to load products:', error)
