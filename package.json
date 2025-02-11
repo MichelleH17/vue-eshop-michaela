@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
-    "build-and-serve": "npm run build && npx serve -L -s -p 5173 dist",
+    "build-and-serve": "npm run build && npx serve -L -s -p 4000 dist",
     "cypress": "npm run build-and-serve & cypress open",
-    "test": "npm run build-and-serve & npx wait-on http://localhost:5173 && cypress run",
+    "test": "npm run build-and-serve & npx wait-on http://localhost:4000 && cypress run",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
