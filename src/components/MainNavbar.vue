@@ -1,7 +1,9 @@
 <template>
   <header class="sticky top-0 left-0 w-full bg-green-700 text-white text-2xl py-2">
     <nav class="flex items-center justify-between px-4">
-      <RouterLink to="/" class="hover:bg-green-800 px-2 py-0.5 rounded">E-SHOP</RouterLink>
+      <RouterLink to="/" class="hover:bg-green-800 px-2 py-0.5 rounded">
+        <h1>E-SHOP</h1>
+      </RouterLink>
       <div class="flex space-x-4">
         <RouterLink to="/store" class="hover:bg-green-800 px-2 py-0.5 rounded">Store</RouterLink>
         <RouterLink to="/orders" class="hover:bg-green-800 px-2 py-0.5 rounded">Orders</RouterLink>
