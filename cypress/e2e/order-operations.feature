@@ -8,7 +8,7 @@ Feature: Order Operations
       And the user adds "sint elit" to the cart
 
       When the user goes to the "Cart" page
-      Then the user clicks on the "Order" button
+      Then the user clicks on the order button
       Then the user should be on the "/orders" page
       Then the user should see new order with "2" items
 

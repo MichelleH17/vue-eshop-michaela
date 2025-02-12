@@ -8,8 +8,8 @@ When(/the user goes to the "(.+)" page/, (pageName: string) => {
   cy.get("a").contains(pageName).click();
 })
 
-Then(/the user clicks on the "(.+)" button/, (buttonText: string) => {
-  cy.get(".order-button").contains(buttonText).click();
+Then(/the user clicks on the order button/, () => {
+  cy.get(".order-button").click();
 })
 
 Then(/the user should be on the "(.+)" page/, (pageName: string) => {
