@@ -30,7 +30,7 @@
         @click="addItem"
         class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-lg shadow font-semibold cursor-pointer"
       >
-        BUY
+        Buy
       </button>
     </div>
   </div>
