@@ -5,7 +5,7 @@
       :key="order.id"
       class="grid grid-cols-1 gap-4 items-center my-4 md:my-8 border border-gray-200 rounded-lg shadow-md hover:border-green-700"
     >
-      <RouterLink :to="`/orders/${order.id}`">
+      <RouterLink :to="`/orders/${order.id}`" class="order-item">
         <div class="p-4">
           <h2 class="text-lg font-semibold mb-2">Order ID: {{ order.id }}</h2>
           <p>Order created: {{ new Date(order.date).toLocaleDateString() }}</p>

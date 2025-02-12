@@ -16,7 +16,7 @@
       <RouterLink
         to="/orders"
         @click="createOrder"
-        class="bg-green-700 hover:bg-green-800 text-xl text-white px-12 py-3 mt-20 rounded-lg shadow font-semibold w-auto justify-self-center col-span-full"
+        class="order-button bg-green-700 hover:bg-green-800 text-xl text-white px-12 py-3 mt-20 rounded-lg shadow font-semibold w-auto justify-self-center col-span-full"
         >Order
       </RouterLink>
     </div>
