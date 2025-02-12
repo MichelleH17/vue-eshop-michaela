@@ -21,7 +21,7 @@ Then(/the user should see "(.+)" on the page/, (what: string) => {
 });
 
 When(/the user adds "(.+)" to the cart/, (productName: string) => {
-  cy.contains(productName).closest("div").find("button").contains("BUY").click();
+  cy.contains(productName).closest("div").find("button").contains("Buy").click();
 })
 
 When(/the user increases the quantity of "(.+)"/, (productName: string) => {
