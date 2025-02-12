@@ -4,13 +4,13 @@
   >
     <button
       @click="removeItem"
-      class="bg-red-700 hover:bg-red-800 text-white px-3 py-1 rounded-lg font-semibold col-span-1 w-auto justify-self-start cursor-pointer"
+      class="remove-button bg-red-700 hover:bg-red-800 text-white px-3 py-1 rounded-lg font-semibold col-span-1 w-auto justify-self-start cursor-pointer"
     >
       X
     </button>
     <h2 class="text-lg font-semibold col-span-2">{{ item.product.name }}</h2>
-    <p class="text-lg col-span-1 justify-self-end">
-      {{ item.quantity }}x {{ item.product.price }}€
+    <p class="product-quantity text-lg col-span-1 justify-self-end">
+      {{ item.quantity }}x
     </p>
     <p class="text-lg font-semibold col-span-1 justify-self-end">{{ totalPriceForProduct }}€</p>
   </li>
