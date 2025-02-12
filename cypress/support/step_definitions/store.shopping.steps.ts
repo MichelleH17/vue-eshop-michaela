@@ -1,4 +1,4 @@
-import { Given, When, Then, DataTable } from "@badeball/cypress-cucumber-preprocessor";
+import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 Then(/the cart icon should contain "(.+)"/, (quantity: number) => {
   cy.get("div span").contains(quantity);
