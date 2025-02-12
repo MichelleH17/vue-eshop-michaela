@@ -22,4 +22,4 @@ Feature: Cart Operations
       | culpa cupidatat | 1        | 139   |
       | ex qui          | 1        | 41    |
 
-    And the user should see "Total:440€" on the page
+    And the user should see "total 440 €" on the page

@@ -1,7 +1,7 @@
 import { Given, When, Then, DataTable } from "@badeball/cypress-cucumber-preprocessor";
 
 Given(/the user is on the "(.+)" page/i, (page: string) => {
-    cy.visit(page.toLowerCase());
+  cy.visit(page.toLowerCase());
 });
 
 When(/the user clicks on the "(.+)" navigation link/, (link: string) => {
@@ -40,3 +40,7 @@ Then(/the cart should contain the following items/, (dataTable: DataTable) => {
     .contains(row.price + "€");
   })
 })
+
+Then(/the user should see "(.+)" displayed on the page/, (what: string) => {
+  cy.contains(what).should("exist")
+});
